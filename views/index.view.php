@@ -1,6 +1,7 @@
 <?php require("./views/partials/header.php")  ?>
-<div class="">
-    <h1 class="">Home</h1>
+<div class='container mt-5'>
+    <div class='row'>
+        <?php generate_pet($data) ?>
     </div>
 </div>
 <?php require("./views/partials/header.php")  ?>
