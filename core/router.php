@@ -16,6 +16,8 @@ class Router {
             $uri = trim($uri, '/');
         }
 
+        echo $uri;
+
         foreach ($this->routes as $pattern => $controller) {
             $pattern = preg_replace('/\{[a-zA-Z]+\}/', '(\d+)', $pattern);
             $pattern = str_replace('/', '\/', $pattern);
