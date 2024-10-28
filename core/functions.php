@@ -10,11 +10,11 @@ function generate_pet($data)
                     <div class='card-body'>
                         <h5 class='card-title'>%s</h5>
                         <p class='card-text'>%s</p>
-                        <a href='/Pawsitive_Home/pet/%s' class='btn btn-primary'>Adopt Me</a>
+                        <a href='/Pawsitive_Home/pet/%s' class='btn btn-primary'>Check Out Me</a>
                     </div>
                 </div>
 
-        ", $res['img_url'], $res['name'], $res['description'], htmlspecialchars($res['pet_id']));
+        ", htmlspecialchars($res['img_url']), $res['name'], htmlspecialchars($res['description']), htmlspecialchars($res['pet_id']));
 
         echo $pet;
     }

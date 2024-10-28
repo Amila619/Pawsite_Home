@@ -1,5 +1,5 @@
-<?php
 
+<?php
 class Router {
     private $routes = [];
 
@@ -16,10 +16,9 @@ class Router {
             $uri = trim($uri, '/');
         }
 
-        echo $uri;
-
         foreach ($this->routes as $pattern => $controller) {
-            $pattern = preg_replace('/\{[a-zA-Z]+\}/', '(\d+)', $pattern);
+            // Update the pattern to match alphanumeric strings with underscores
+            $pattern = preg_replace('/\{[a-zA-Z]+\}/', '([a-zA-Z0-9_]+)', $pattern);
             $pattern = str_replace('/', '\/', $pattern);
             
             if (preg_match("/^{$pattern}$/", $uri, $matches)) {
@@ -36,6 +35,7 @@ class Router {
     }
 }
 
+// Example usage
 require 'functions.php';
 
 $router = new Router();
@@ -44,6 +44,7 @@ $router->define([
     '' => 'controllers/index.php',
     '404' => 'controllers/404.php',
     'signup' => 'controllers/signup.php',
+    'pet/{id}' => 'controllers/pet.php',
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];
