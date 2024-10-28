@@ -106,21 +106,6 @@ VALUES
     ('ui_C9D0E1F2', 'pi_R9S0T1U2', '2024-10-08 13:20:00', 'Rejected'),
     ('ui_G3H4I5J6', 'pi_V3W4X5Y6', '2024-10-09 15:00:00', 'Pending');
 
-
-INSERT INTO adoption_application (user_id, pet_id, application_date, status)
-VALUES
-    ('ui_A1B2C3D4', 'pi_P1Q2R3S4', '2024-10-01 09:00:00', 'Pending'),
-    ('ui_E5F6G7H8', 'pi_T5U6V7W8', '2024-10-02 10:30:00', 'Approved'),
-    ('ui_I9J0K1L2', 'pi_X9Y0Z1A2', '2024-10-03 11:15:00', 'Pending'),
-    ('ui_M3N4O5P6', 'pi_B3C4D5E6', '2024-10-04 14:00:00', 'Rejected'),
-    ('ui_Q7R8S9T0', 'pi_F7G8H9I0', '2024-10-05 12:00:00', 'Approved'),
-    ('ui_U1V2W3X4', 'pi_J1K2L3M4', '2024-10-06 08:45:00', 'Pending'),
-    ('ui_Y5Z6A7B8', 'pi_N5O6P7Q8', '2024-10-07 16:30:00', 'Approved'),
-    ('ui_C9D0E1F2', 'pi_R9S0T1U2', '2024-10-08 13:20:00', 'Rejected'),
-    ('ui_G3H4I5J6', 'pi_V3W4X5Y6', '2024-10-09 15:00:00', 'Pending'),
-    ('ui_K7L8M9N0', 'pi_Z7A8B9C0', '2024-10-10 10:00:00', 'Approved');
-
-
 INSERT INTO donations (donor_name, donor_email, amount, donation_date, message)
 VALUES
     ('John Doe', 'johndoe@example.com', 50.00, '2024-10-05 09:00:00', 'Thank you for your great work!'),
@@ -133,3 +118,16 @@ VALUES
     ('Patricia Garcia', 'patriciagarcia@example.com', 150.00, '2024-10-12 14:00:00', 'Thank you for helping the animals.'),
     ('Charles Hernandez', 'charleshernandez@example.com', 175.00, '2024-10-13 15:45:00', 'Supporting the mission wholeheartedly.'),
     ('Daniel Rodriguez', 'danielrodriguez@example.com', 80.00, '2024-10-14 16:00:00', 'Grateful for your efforts.');
+
+INSERT INTO adopted_pets (adopted_pet_id, pet_id, user_id, adoption_date, status)
+VALUES
+    ('ap_A1B2C3', 'pi_P1Q2R', 'ui_A1B2C', '2024-10-01 09:00:00', 'Active'),
+    ('ap_D4E5F6', 'pi_T5U6V', 'ui_E5F6G', '2024-10-02 10:30:00', 'Active'),
+    ('ap_G7H8I9', 'pi_X9Y0Z', 'ui_I9J0K', '2024-10-03 11:15:00', 'Active'),
+    ('ap_J0K1L2', 'pi_B3C4D', 'ui_M3N4O', '2024-10-04 14:00:00', 'Active'),
+    ('ap_M3N4O5', 'pi_F7G8H', 'ui_Q7R8S', '2024-10-05 12:00:00', 'Active'),
+    ('ap_P6Q7R8', 'pi_J1K2L', 'ui_U1V2W', '2024-10-06 08:45:00', 'Active'),
+    ('ap_S9T0U1', 'pi_N5O6P', 'ui_Y5Z6A', '2024-10-07 16:30:00', 'Active'),
+    ('ap_V2W3X4', 'pi_R9S0T', 'ui_C9D0E', '2024-10-08 13:20:00', 'Inactive'),
+    ('ap_Y5Z6A7', 'pi_V3W4X', 'ui_G3H4I', '2024-10-09 15:00:00', 'Active'),
+    ('ap_B8C9D0', 'pi_Z7A8B', 'ui_K7L8M', '2024-10-10 10:00:00', 'Active');
