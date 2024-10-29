@@ -44,6 +44,9 @@ $router->define([
     '' => 'controllers/index.php',
     '404' => 'controllers/404.php',
     'signup' => 'controllers/signup.php',
+    'login' => 'controllers/login.php',
+    'donation' => 'controllers/donation.php',
+    'add_pet' => 'controllers/add_pet.php',
     'pet/{id}' => 'controllers/pet.php',
 ]);
 
