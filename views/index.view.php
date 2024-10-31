@@ -4,19 +4,14 @@
 <html lang="en">
 <head>
     <style>
-        /*body part*/
+        /*body style*/
         body { 
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
         }
 
-        /*header part*/
-        .header-image {
-            background-image: url('bgimg.jfif');
-            background-size: cover; 
-            background-position: center;
-            height: 750px;
-        }
+        /*header style*/
+
 
         * {box-sizing: border-box;}
 
@@ -58,6 +53,30 @@
         padding-right:10%;
         }
 
+        .header-image {
+            background-image: url('bgimg.jfif');
+            background-size: cover; 
+            background-position: center;
+            height: 750px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; 
+            padding-right: 50px;
+        }
+
+         /* Text on image styles */
+         .header-text {
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: right;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 50%;
+        }
+
         @media screen and (max-width: 500px) {
             .header a {
                 float: none;
@@ -68,23 +87,31 @@
             .header-right {
                 float: none;
             }
+
+            .header-text {
+                font-size: 24px;
+                padding: 10px;
+            }
         }
     </style>
 
         <body>
             <div class="header">
             <a href="#default" class="logo">Logo</a>
-            <div class="header-right">
-                <a class="active" href="#home">GALLARY</a>
-                <a href="#about">ABOUT</a>
-                <a href="#contact_us">CONTACT US</a>
-                <a href="#register">REGISTER</a>
-                <a href="#sign_up">SIGN UP</a>
+                <div class="header-right">
+                    <a class="active" href="#home">GALLARY</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#contact_us">CONTACT US</a>
+                    <a href="#register">REGISTER</a>
+                    <a href="#sign_up">SIGN UP</a>
+                </div>
             </div>
+            <div class="header-image">
+                <div class="header-text">ANIMALS NEED
+                    Your Help!<br><br>
+                    You can chip in with money & effort!  Cats, Dogs and Even Raccoons Adopt Any Pet You Like!
+                </div>
             </div>
-            <div class="header-image"></div>
-
         </body>
-    </div>
 </div>
 <?php require("./views/partials/header.php")  ?>
