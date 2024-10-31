@@ -65,9 +65,6 @@ CREATE TABLE adopted_pets (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
-USE pawsitive;
-
-
 INSERT INTO users (user_id, username, password_hash, email, first_name, last_name, phone_number, address, zip_code, role, img_url)
 VALUES 
     ('ui_A1B2C', 'johnsmith', 'hash_password1', 'johnsmith@example.com', 'John', 'Smith', '5551234567', '123 Maple St, Springfield', '62701', 'user', 'public/images/upload_users/ui_A1B2C.jpg'),
