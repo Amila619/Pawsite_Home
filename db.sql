@@ -38,11 +38,10 @@ CREATE TABLE pets (
 
 CREATE TABLE adoption_application (
     application_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    pet_id INT NOT NULL,
+    user_id CHAR(8) NOT NULL,
+    pet_id CHAR(8) NOT NULL,
     application_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
-    comments TEXT,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (pet_id) REFERENCES pets(pet_id) ON DELETE CASCADE
 );
@@ -56,38 +55,15 @@ CREATE TABLE donations (
     message TEXT
 );
 
-CREATE TABLE pets (
-    pet_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    species ENUM('Dog', 'Cat', 'Other') NOT NULL,
-    breed VARCHAR(50),
-    age INT,
-    size ENUM('Small', 'Medium', 'Large'),
-    color VARCHAR(50),
-    temperament VARCHAR(255),
-    health_status VARCHAR(255),
-    adoption_fee DECIMAL(10, 2),
-    status ENUM('Available', 'Adopted', 'On Hold') DEFAULT 'Available',
-    description TEXT,
-    img_url VARCHAR(255),  -- Changed from photo BLOB to img_url VARCHAR
-    owner_id INT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (owner_id) REFERENCES users(user_id) ON DELETE SET NULL
-);
-
 CREATE TABLE adopted_pets (
-    adopted_pet_id INT PRIMARY KEY AUTO_INCREMENT,
-    pet_id INT NOT NULL,
-    user_id INT NOT NULL,
+    adopted_pet_id CHAR(8) PRIMARY KEY,
+    pet_id CHAR(8) NOT NULL,
+    user_id CHAR(8) NOT NULL,
     adoption_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     status ENUM('Active', 'Inactive') DEFAULT 'Active',
-    comments TEXT,
     FOREIGN KEY (pet_id) REFERENCES pets(pet_id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
-
-USE pawsitive;
-
 
 INSERT INTO users (user_id, username, password_hash, email, first_name, last_name, phone_number, address, zip_code, role, img_url)
 VALUES 
