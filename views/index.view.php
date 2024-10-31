@@ -4,6 +4,13 @@
 <html lang="en">
 <head>
     <style>
+        /*body part*/
+        body { 
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*header part*/
         .header-image {
             background-image: url('bgimg.jfif');
             background-size: cover; 
@@ -11,13 +18,7 @@
             height: 750px;
         }
 
-        <style>
         * {box-sizing: border-box;}
-
-        body { 
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
 
         .header {
         overflow: hidden;
@@ -58,33 +59,32 @@
         }
 
         @media screen and (max-width: 500px) {
-        .header a {
-            float: none;
-            display: block;
-            text-align: left;
-        }
-        
-        .header-right {
-            float: none;
-
-        }
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            
+            .header-right {
+                float: none;
+            }
         }
     </style>
 
-<body>
-    <div class="header">
-    <a href="#default" class="logo">Logo</a>
-    <div class="header-right">
-        <a class="active" href="#home">GALLARY</a>
-        <a href="#contact">ABOUT</a>
-        <a href="#about">CONTACT US</a>
-        <a href="#about">REGISTER</a>
-        <a href="#about">SIGN UP</a>
-    </div>
-    </div>
-    <div class="header-image"></div>
+        <body>
+            <div class="header">
+            <a href="#default" class="logo">Logo</a>
+            <div class="header-right">
+                <a class="active" href="#home">GALLARY</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact_us">CONTACT US</a>
+                <a href="#register">REGISTER</a>
+                <a href="#sign_up">SIGN UP</a>
+            </div>
+            </div>
+            <div class="header-image"></div>
 
-</body>
+        </body>
     </div>
 </div>
 <?php require("./views/partials/header.php")  ?>
