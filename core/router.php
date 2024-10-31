@@ -42,6 +42,7 @@ $router->define([
     '' => 'controllers/index.php',
     '404' => 'controllers/404.php',
     'signup' => 'controllers/signup.php',
+    'user_dashboard' => 'controllers/user_dashboard.php',
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];
