@@ -17,7 +17,7 @@ class Router {
         }
 
         foreach ($this->routes as $pattern => $controller) {
-            // Update the pattern to match alphanumeric strings with underscores
+            
             $pattern = preg_replace('/\{[a-zA-Z]+\}/', '([a-zA-Z0-9_]+)', $pattern);
             $pattern = str_replace('/', '\/', $pattern);
             
@@ -48,6 +48,7 @@ $router->define([
     'donation' => 'controllers/donation.php',
     'add_pet' => 'controllers/add_pet.php',
     'pet/{id}' => 'controllers/pet.php',
+    'adopt_pet/{id}' => 'controllers/adopt_pet.php',
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];

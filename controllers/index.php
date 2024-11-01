@@ -1,22 +1,24 @@
 <?php
 
+session_start();
+
+if(!isset($_SESSION['user_id'])){
+    header('Location: /Pawsitive_Home/login');
+    exit;
+}
+
 $mysqli = require __DIR__ . '/../core/database.php';
 
-try {
-    $sql = 'SELECT * FROM pets';
-    $result = $mysqli->query($sql);
+$sql = 'SELECT * FROM pets';
+$result = $mysqli->query($sql);
 
-    if (!$result) {
-        throw new Exception("SQL error: " . $mysqli->error);
-    }
+if (!$result) {
+    throw new Exception("SQL error: " . $mysqli->error);
+}
 
-    $data = []; // Initialize the array
-    while ($res = $result->fetch_assoc()) {
-        array_push($data, $res);
-    }
-    
-} catch (Exception $e) {
-    die($e->getMessage());
+$data = []; // Initialize the array
+while ($res = $result->fetch_assoc()) {
+    array_push($data, $res);
 }
 
 $title = 'home';

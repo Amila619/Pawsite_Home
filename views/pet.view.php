@@ -22,6 +22,7 @@ if(isset($pet)){
                             <li class="list-group-item"><strong>Color:</strong> %s</li>
                             <li class="list-group-item"><strong>Temperament:</strong> %s</li>
                             <li class="list-group-item"><strong>Health Status:</strong> %s</li>
+                            <li class="list-group-item"><strong>About:</strong> %s</li>
                             <li class="list-group-item"><strong>Adoption Fee:</strong> $%s</li>
                             <li class="list-group-item"><strong>Status:</strong> %s</li>
                             <li class="list-group-item"><small>Posted on: %s</small></li>
@@ -32,26 +33,29 @@ if(isset($pet)){
         </div>
         <!-- Button to Contact Owner -->
         <div class="text-center">
-            <a href="contact_owner.php?owner_id=%s" class="btn btn-primary">Contact Owner</a>
+            <a href="/Pawsitive_Home/adopt_pet/%s" class="btn btn-primary">
+                %s
+            </a>
         </div>
     </div>
     ', 
     htmlspecialchars($pet['img_url']),
-    htmlspecialchars($pet['name']),
-    htmlspecialchars($pet['name']),
+    htmlspecialchars($pet['img_url']),
     htmlspecialchars($pet['name']),
     htmlspecialchars($pet['species']),
+    htmlspecialchars($pet['name']),
     htmlspecialchars($pet['breed']),
-    htmlspecialchars($pet['description']),
     htmlspecialchars($pet['age']),
     htmlspecialchars($pet['size']),
     htmlspecialchars($pet['color']),
     htmlspecialchars($pet['temperament']),
     htmlspecialchars($pet['health_status']),
+    htmlspecialchars($pet['description']),
     htmlspecialchars($pet['adoption_fee']),
     htmlspecialchars($pet['status']),
     htmlspecialchars(date('F j, Y', strtotime($pet['created_at']))),
-    htmlspecialchars($pet['owner_id'])
+    htmlspecialchars($pet['pet_id']),
+    $adopted,
 );
 
 echo $page;
