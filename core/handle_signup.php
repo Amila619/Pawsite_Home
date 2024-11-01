@@ -2,11 +2,6 @@
 
 session_start();
 
-if(isset($_SESSION['user_id'])){
-    header('Location: /Pawsitive_Home/');
-    exit;
-}
-
 $mysqli = require __DIR__ . '/../core/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("s", $_POST['username']);
 
         if ($stmt->execute() === TRUE) {
-            $result = $stmt->get_result();
+            $stmt = $stmt->get_result();
+            $result = $stmt->fetch_assoc();
 
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();

@@ -49,6 +49,7 @@ $router->define([
     'add_pet' => 'controllers/add_pet.php',
     'pet/{id}' => 'controllers/pet.php',
     'adopt_pet/{id}' => 'controllers/adopt_pet.php',
+    'delete_pet/{id}' => 'controllers/delete_pet.php' 
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];

@@ -25,6 +25,7 @@ if (isset($params[0])) {
     $result = $stmt->get_result();
 
     $adopted = $result->num_rows > 0 ? "Applied" : "Adopt";
+    $color = $result->num_rows > 0 ? "danger" : "primary";
 
     $sql = "SELECT * FROM pets WHERE pet_id = ?";
     $stmt = $mysqli->stmt_init();

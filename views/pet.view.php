@@ -33,7 +33,7 @@ if(isset($pet)){
         </div>
         <!-- Button to Contact Owner -->
         <div class="text-center">
-            <a href="/Pawsitive_Home/adopt_pet/%s" class="btn btn-primary">
+            <a href="/Pawsitive_Home/adopt_pet/%s" class="btn btn-%s">
                 %s
             </a>
         </div>
@@ -55,7 +55,8 @@ if(isset($pet)){
     htmlspecialchars($pet['status']),
     htmlspecialchars(date('F j, Y', strtotime($pet['created_at']))),
     htmlspecialchars($pet['pet_id']),
-    $adopted,
+    $color,
+    $adopted
 );
 
 echo $page;

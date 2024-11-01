@@ -6,7 +6,7 @@
         <div class="card">
           <div class="card-body p-4">
             <h3 class="text-center mb-4">Sign Up</h3>
-            <form>
+            <form action="../../Pawsitive_Home/core/handle_signup.php" method="POST">
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" required>
