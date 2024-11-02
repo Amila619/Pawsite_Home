@@ -12,14 +12,15 @@ $mysqli = require __DIR__ . '/../core/database.php';
 if (isset($params[0])) {
     $pid = $params[0];
 
-    $sql = "SELECT * FROM adoption_application WHERE pet_id = ?";
+    $sql = "SELECT * FROM adoption_application WHERE pet_id = ? AND user_id = ?";
     $stmt = $mysqli->stmt_init();
 
     if (!$stmt->prepare($sql)) {
         throw new Exception("SQL error: " . $mysqli->error);
     }
 
-    $stmt->bind_param("s", $pid);
+    $u_id = $_SESSION['user_id'];
+    $stmt->bind_param("ss", $pid, $u_id);
 
     $stmt->execute();
     $result = $stmt->get_result();

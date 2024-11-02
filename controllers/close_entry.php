@@ -11,19 +11,19 @@ $mysqli = require __DIR__ . '/../core/database.php';
 
 if (isset($params[0])) {
 
-    $pid = $params[0];
-    $sql = "DELETE FROM pets WHERE pet_id = ?";
+    $aid = $params[0];
+    $sql = "Update adoption_application SET view_status = ? WHERE application_id = ? AND user_id = ?";
     $stmt = $mysqli->stmt_init();
 
     if (!$stmt->prepare($sql)) {
         throw new Exception("SQL error: " . $mysqli->error);
     }
 
-    $stmt->bind_param("s", $pid);
+    $view_status = 0;
+    $stmt->bind_param("iss", $view_status, $aid, $_SESSION['user_id']);
 
     if ($stmt->execute()) {
-        unlink(__DIR__ . '/../public/images/upload_pets/' . $pid .'.jpg');
-        header("Location: /Pawsitive_Home/");
+        header("Location: /Pawsitive_Home/user_dashboard");
         exit;
     }
 

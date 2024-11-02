@@ -32,7 +32,7 @@ CREATE TABLE pets (
     description TEXT,
     img_url VARCHAR(255),
     owner_id CHAR(8),
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE adoption_application (
@@ -40,6 +40,7 @@ CREATE TABLE adoption_application (
     user_id CHAR(8) NOT NULL,
     pet_id CHAR(8) NOT NULL,
     application_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    view_status TINYINT(1) DEFAULT 0,
     status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (pet_id) REFERENCES pets(pet_id) ON DELETE CASCADE
@@ -92,17 +93,17 @@ VALUES
     ('pi_Z7A8B', 'Daisy', 'Dog', 'French Bulldog', 2, 'Small', 'Fawn', 'Affectionate', 'Vaccinated', 200.00, 'Available', 'Daisy is a playful French Bulldog who loves attention.', 'public/images/upload_pets/pi_Z7A8B.jpg', 'ui_A1B2C');
 
 
-INSERT INTO adoption_application (user_id, pet_id, application_date, status)
+INSERT INTO adoption_application (user_id, pet_id, application_date, view_status, status)
 VALUES
-    ('ui_A1B2C', 'pi_P1Q2R', '2024-10-01 09:00:00', 'Pending'),
-    ('ui_E5F6G', 'pi_T5U6V', '2024-10-02 10:30:00', 'Approved'),
-    ('ui_I9J0K', 'pi_X9Y0Z', '2024-10-03 11:15:00', 'Pending'),
-    ('ui_M3N4O', 'pi_B3C4D', '2024-10-04 14:00:00', 'Rejected'),
-    ('ui_Q7R8S', 'pi_F7G8H', '2024-10-05 12:00:00', 'Approved'),
-    ('ui_U1V2W', 'pi_J1K2L', '2024-10-06 08:45:00', 'Pending'),
-    ('ui_Y5Z6A', 'pi_N5O6P', '2024-10-07 16:30:00', 'Approved'),
-    ('ui_C9D0E', 'pi_R9S0T', '2024-10-08 13:20:00', 'Rejected'),
-    ('ui_G3H4I', 'pi_V3W4X', '2024-10-09 15:00:00', 'Pending');
+    ('ui_A1B2C', 'pi_P1Q2R', '2024-10-01 09:00:00', 1, 'Pending'), 
+    ('ui_E5F6G', 'pi_T5U6V', '2024-10-02 10:30:00', 1, 'Approved'),
+    ('ui_I9J0K', 'pi_X9Y0Z', '2024-10-03 11:15:00', 1, 'Pending'), 
+    ('ui_M3N4O', 'pi_B3C4D', '2024-10-04 14:00:00', 0, 'Rejected'),
+    ('ui_Q7R8S', 'pi_F7G8H', '2024-10-05 12:00:00', 1, 'Approved'),
+    ('ui_U1V2W', 'pi_J1K2L', '2024-10-06 08:45:00', 1, 'Pending'), 
+    ('ui_Y5Z6A', 'pi_N5O6P', '2024-10-07 16:30:00', 1, 'Approved'),
+    ('ui_C9D0E', 'pi_R9S0T', '2024-10-08 13:20:00', 0, 'Rejected'),
+    ('ui_G3H4I', 'pi_V3W4X', '2024-10-09 15:00:00', 1, 'Pending'); 
 
 INSERT INTO donations (donor_name, donor_email, amount, donation_date, message)
 VALUES

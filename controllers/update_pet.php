@@ -31,7 +31,6 @@ if(isset($params[0])){
         throw new Exception("Pet not found with ID: " . htmlspecialchars($id));
     }
 
-
     $stmt->close();
     $mysqli->close();
 }
