@@ -50,3 +50,29 @@
         height: 180px;
     }
 }
+
+/* Navbar user image */
+.user-image {
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Adjust the size as needed */
+    border-radius: 50%; /* Circular shape */
+}
+
+/* Footer styles */
+.social-icons a {
+    font-size: 1.5rem; /* Increased size for social media icons */
+    transition: transform 0.3s; /* Smooth transformation */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+}
+
+.text-decoration-none {
+    text-decoration: none; /* Remove underlines from links */
+    color: inherit; /* Use inherited color */
+}
+
+.text-decoration-none:hover {
+    color: #e58e26; /* Change color on hover for links */
+}
