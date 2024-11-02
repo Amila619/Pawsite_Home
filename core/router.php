@@ -45,8 +45,10 @@ $router->define([
     '404' => 'controllers/404.php',
     'signup' => 'controllers/signup.php',
     'login' => 'controllers/login.php',
+    'logout' => 'controllers/logout.php',
     'donation' => 'controllers/donation.php',
     'add_pet' => 'controllers/add_pet.php',
+    'update_pet/{id}' => 'controllers/update_pet.php',
     'pet/{id}' => 'controllers/pet.php',
     'adopt_pet/{id}' => 'controllers/adopt_pet.php',
     'delete_pet/{id}' => 'controllers/delete_pet.php' 

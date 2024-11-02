@@ -33,7 +33,6 @@ CREATE TABLE pets (
     img_url VARCHAR(255),
     owner_id CHAR(8),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (owner_id) REFERENCES users(user_id) ON DELETE SET NULL
 );
 
 CREATE TABLE adoption_application (

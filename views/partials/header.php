@@ -8,4 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo $BASE_URL; ?>/css/styles.css">
 </head>
-<body class="d-flex align-items-center justify-content-center vh-full">
+<body class="vh-full">
+    <?php require('./views/partials/nav.php') ?>
+    <div class="d-flex align-items-center justify-content-center vh-full">

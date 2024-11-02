@@ -29,10 +29,9 @@ if (isset($params[0])) {
     if ($result->num_rows === 0) {
 
         $sql = "INSERT INTO adoption_application (user_id, pet_id) VALUES (?, ?)";
+        $stmt = $mysqli->stmt_init();
 
-        $stmt = $mysqli->prepare($sql);
-
-        if ($stmt === false) {
+        if (!$stmt->prepare($sql)) {
             die("Error preparing statement: " . $mysqli->error);
         }
 

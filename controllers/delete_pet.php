@@ -25,6 +25,8 @@ if (isset($params[0])) {
         header("Location: /Pawsitive_Home/");
         exit;
     }
+
+    
 }
 
 $mysqli->close();

@@ -48,3 +48,38 @@ function generate_admpet($data)
     echo $pet;
 }
 }
+
+function generateId() {
+    $id = "";
+
+    for ($i = 0; $i < 2; $i++) {
+        $id .= chr(rand(65, 90));
+        $id .= rand(0, 9);
+    }
+
+    $id .= chr(rand(65, 90));
+    return $id;
+}
+
+function saveUploadImg($file, $prefix) {
+    if ($file['name'] != "") {
+        $target_dir = __DIR__ . "/../public/images/upload_pets/";
+        $path = pathinfo($file['name']);
+        $ext = strtolower($path['extension']);
+        $temp_name = $file['tmp_name'];
+
+        $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+        if (!in_array($ext, $allowed_extensions)) {
+            return null;
+        }
+        
+        $unique_filename = $prefix . "." . $ext;
+        $path_filename_ext = $target_dir . $unique_filename;
+
+        if (!file_exists($path_filename_ext)) {
+            move_uploaded_file($temp_name, $path_filename_ext);
+            return "public/images/upload_pets/" . $unique_filename;
+        }
+    }
+    return null;
+}
