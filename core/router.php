@@ -17,7 +17,7 @@ class Router {
         }
 
         foreach ($this->routes as $pattern => $controller) {
-            $pattern = preg_replace('/\{[a-zA-Z]+\}/', '(\d+)', $pattern);
+            $pattern = preg_replace('/\{[a-zA-Z]+\}/', '([a-zA-Z0-9_]+)', $pattern);
             $pattern = str_replace('/', '\/', $pattern);
             
             if (preg_match("/^{$pattern}$/", $uri, $matches)) {
@@ -42,6 +42,8 @@ $router->define([
     '' => 'controllers/index.php',
     '404' => 'controllers/404.php',
     'signup' => 'controllers/signup.php',
+    'category' => 'controllers/category.php',
+    'category/{id}' => 'controllers/category.php',
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];
