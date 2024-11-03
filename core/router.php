@@ -56,7 +56,9 @@ $router->define([
     'category' => 'controllers/category.php', 
     'category/{id}' => 'controllers/category.php', 
     'user_dashboard' => 'controllers/user_dashboard.php', 
-    'admin_dashboard' => 'controllers/admin_dashboard.php' 
+    'admin_dashboard' => 'controllers/admin_dashboard.php', 
+    'user_update' => 'controllers/user_update.php', 
+    'user' => 'controllers/user.php' 
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];
