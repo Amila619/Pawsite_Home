@@ -1,6 +1,7 @@
 <?php require('./views/partials/header.php') ?>
 <?php if (!isset($data)) { ?>
-    <section class="container hero-section text-center my-5">
+<div class="container custom-m">
+<section class="container hero-section text-center">
         <h1>Save a Life! Adopt a Pet!</h1>
         <p>Adopting a pet is more than adding an animal to your home—it's welcoming a loyal friend who will bring joy, love, and companionship. Each pet has a unique story and is waiting for a second chance at happiness. Bring home a forever friend today!</p>
     </section>
@@ -9,7 +10,7 @@
         <div class="row g-4 text-center">
             <div class="col-md-4">
                 <div class="card shadow-sm">
-                    <a href="/Pawsitive_Home/category/dog">
+                    <a href="/Pawsitive_Home/category/cat">
                         <img src="./public/images/category/cat.jpg" class="card-img-top" alt="Cat">
                     </a>
                     <div class="card-body">
@@ -20,7 +21,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card shadow-sm">
-                    <a href="dogs.php">
+                    <a href="/Pawsitive_Home/category/dog">
                         <img src="./public/images/category/dog.jpg" class="card-img-top" alt="Dog">
                     </a>
                     <div class="card-body">
@@ -31,7 +32,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card shadow-sm">
-                    <a href="otherspet.php">
+                    <a href="/Pawsitive_Home/category/other">
                         <img src="./public/images/category/rabbit.jpg" class="card-img-top" alt="Rabbit">
                     </a>
                     <div class="card-body">
@@ -43,16 +44,17 @@
         </div>
     </section>
 <?php }else{ ?>
-    <div class='container mt-5'>
+    <div class='container custom-m'>
     <?php if (isset($_SESSION['user_id'])) { ?>
         <a href='/Pawsitive_Home/add_pet' class='btn btn-success btn-md d-flex align-items-center' style='width: 8rem;'>
             <i class='bi bi-plus-circle me-2'></i> Add Pet
         </a>
     <?php } ?>
-    <div class='row'>
+    <div class='row gap-2'>
         <?php generate_pet($data) ?>
     </div>
 </div>
 <?php } ?>
+</div>
 <script src="./public/js/category.js"></script>
 <?php require('./views/partials/footer.php') ?>

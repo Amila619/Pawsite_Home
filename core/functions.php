@@ -5,16 +5,19 @@ function generate_pet($data)
     foreach ($data as $res) {
         $pet = sprintf("
 
-                <div class='card m-2' style='width: 16rem;'>
-                    <img src=../%s class='card-img-top' alt='Pet Image' >
-                    <div class='card-body'>
-                        <h5 class='card-title'>%s</h5>
-                        <p class='card-text'>%s</p>
-                        <a href='/Pawsitive_Home/pet/%s' class='btn btn-primary' style='background-color: #e58e26; color: white; border: none;'>Check Out Me</a>
+            <div class='card border-0 shadow-sm m-2' style='width: 16rem;'>
+                <img src='../%s' class='card-img-top rounded-top' alt='Pet Image' style='width: 100%%; height: 200px; object-fit: cover;'>
+                <div class='card-body p-3'>
+                    <h5 class='card-title text-secondary fw-bold'>%s</h5>
+                    <div class='text-center'>
+                        <a href='/Pawsitive_Home/pet/%s' class='btn w-100' style='background-color: #d35400; color: white; border: none;'>
+                            Check Out Me
+                        </a>
                     </div>
                 </div>
+            </div>
 
-        ", htmlspecialchars($res['img_url'] . '?v=' . time()), $res['name'], htmlspecialchars($res['description']), htmlspecialchars($res['pet_id']));
+        ", htmlspecialchars($res['img_url'] . '?v=' . time()), $res['name'], htmlspecialchars($res['pet_id']));
 
         echo $pet;
     }
@@ -26,10 +29,10 @@ function generate_admpet($data)
     foreach ($data as $res) {
         $pet = sprintf(
             "
-            <div class='card m-2' style='width: 16rem;'>
-                <img src='../%s' class='card-img-top' alt='Pet Image'>
-                <div class='card-body'>
-                    <h5 class='card-title d-flex justify-content-between'>
+            <div class='card border-0 shadow-sm m-2' style='width: 16rem;'>
+            <img src='../%s' class='card-img-top rounded-top' alt='Pet Image' style='width: 100%%; height: 200px; object-fit: cover;'>
+            <div class='card-body p-3'>
+                    <h5 class='card-title d-flex justify-content-between text-secondary fw-bold'>
                         %s
                         <div class='d-flex gap-2'>
                             <a href='/Pawsitive_Home/delete_pet/%s' class='text-danger' title='Delete'>
@@ -40,16 +43,19 @@ function generate_admpet($data)
                             </a>
                         </div>
                     </h5>
-                    <p class='card-text'>%s</p>
-                    <a href='/Pawsitive_Home/pet/%s' class='btn btn-primary' style='background-color: #e58e26; color: white; border: none;'>Check Out Me</a>
+                    <div class='text-center'>
+                        <a href='/Pawsitive_Home/pet/%s' class='btn w-100' style='background-color: #d35400; color: white; border: none;'>
+                            Check Out Me
+                        </a>
+                    </div>
                 </div>
             </div>
+
     ",
             htmlspecialchars($res['img_url'] . '?v=' . time()),
             htmlspecialchars($res['name']),
             htmlspecialchars($res['pet_id']),
             htmlspecialchars($res['pet_id']),
-            htmlspecialchars($res['description']),
             htmlspecialchars($res['pet_id'])
         );
 

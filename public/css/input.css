@@ -1,4 +1,5 @@
-/* Category Page */
+/* Home */
+/* Category */
 
 /* Hero section styling */
 
@@ -30,7 +31,6 @@
 .card img {
     height: 200px;
     object-fit: cover;
-    border-radius: 15px 15px 0 0;
     transition: box-shadow 0.3s;
 }
 .card-title {
@@ -75,4 +75,24 @@
 
 .text-decoration-none:hover {
     color: #e58e26; /* Change color on hover for links */
+}
+
+.custom-m {
+    margin-top: 8rem; /* Adjust this value as needed */
+    margin-bottom: 6rem; /* Optional: add bottom margin if desired */
+}
+
+/* Button Styles */
+
+.btn-custom {
+    background-color: #d35400;
+    color: #FFF;
+    border: 2px solid transparent;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-custom:hover {
+    color: #d35400;
+    background-color: #FFF;
+    border: 2px solid #d35400;
 }

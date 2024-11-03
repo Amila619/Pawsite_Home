@@ -50,8 +50,6 @@
             <div class="col-md-2 mb-4">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#login" class="text-light text-decoration-none">Login</a></li>
-                    <li><a href="#signup" class="text-light text-decoration-none">Sign Up</a></li>
                     <li><a href="#category" class="text-light text-decoration-none">Category</a></li>
                     <li><a href="#contact" class="text-light text-decoration-none">Contact Us</a></li>
                     <li><a href="#about" class="text-light text-decoration-none">About Us</a></li>

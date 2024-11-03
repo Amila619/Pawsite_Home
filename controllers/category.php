@@ -1,7 +1,8 @@
 <?php
 
-$mysqli = require __DIR__ . '/../core/database.php';
+session_start();
 
+$mysqli = require __DIR__ . '/../core/database.php';
 
 if (isset($params[0])) {
     $search_query = $params[0];
