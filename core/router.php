@@ -1,5 +1,5 @@
-<?php
 
+<?php
 class Router {
     private $routes = [];
 
@@ -17,7 +17,8 @@ class Router {
         }
 
         foreach ($this->routes as $pattern => $controller) {
-            $pattern = preg_replace('/\{[a-zA-Z]+\}/', '(\d+)', $pattern);
+            
+            $pattern = preg_replace('/\{[a-zA-Z]+\}/', '([a-zA-Z0-9_]+)', $pattern);
             $pattern = str_replace('/', '\/', $pattern);
             
             if (preg_match("/^{$pattern}$/", $uri, $matches)) {
@@ -34,6 +35,7 @@ class Router {
     }
 }
 
+// Example usage
 require 'functions.php';
 
 $router = new Router();
@@ -42,7 +44,25 @@ $router->define([
     '' => 'controllers/index.php',
     '404' => 'controllers/404.php',
     'signup' => 'controllers/signup.php',
+<<<<<<< HEAD
     'user_dashboard' => 'controllers/user_dashboard.php',
+=======
+    'login' => 'controllers/login.php',
+    'logout' => 'controllers/logout.php',
+    'donation' => 'controllers/donation.php',
+    'add_pet' => 'controllers/add_pet.php',
+    'update_pet/{id}' => 'controllers/update_pet.php',
+    'pet/{id}' => 'controllers/pet.php',
+    'adopt_pet/{id}' => 'controllers/adopt_pet.php',
+    'delete_pet/{id}' => 'controllers/delete_pet.php', 
+    'close_entry/{id}' => 'controllers/close_entry.php', 
+    'category' => 'controllers/category.php', 
+    'category/{id}' => 'controllers/category.php', 
+    'user_dashboard' => 'controllers/user_dashboard.php', 
+    'admin_dashboard' => 'controllers/admin_dashboard.php', 
+    'user_update' => 'controllers/user_update.php', 
+    'user' => 'controllers/user.php' 
+>>>>>>> Amila
 ]);
 
 $uri = $_SERVER['REQUEST_URI'];

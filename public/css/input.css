@@ -1,0 +1,98 @@
+/* Home */
+/* Category */
+
+/* Hero section styling */
+
+.hero-section {
+    background-color: #ffe6cc;
+    color: #2d3436;
+    padding: 50px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.hero-section h1 {
+    font-weight: bold;
+    color: #d35400;
+    text-transform: uppercase;
+}
+.hero-section p {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.card img {
+    height: 200px;
+    object-fit: cover;
+    transition: box-shadow 0.3s;
+}
+.card-title {
+    font-weight: bold;
+    color: #34495e;
+}
+.card-text {
+    color: #4b4b4b;
+}
+
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 30px;
+    }
+    .card img {
+        height: 180px;
+    }
+}
+
+/* Navbar user image */
+.user-image {
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Adjust the size as needed */
+    border-radius: 50%; /* Circular shape */
+}
+
+/* Footer styles */
+.social-icons a {
+    font-size: 1.5rem; /* Increased size for social media icons */
+    transition: transform 0.3s; /* Smooth transformation */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+}
+
+.text-decoration-none {
+    text-decoration: none; /* Remove underlines from links */
+    color: inherit; /* Use inherited color */
+}
+
+.text-decoration-none:hover {
+    color: #e58e26; /* Change color on hover for links */
+}
+
+.custom-m {
+    margin-top: 8rem; /* Adjust this value as needed */
+    margin-bottom: 6rem; /* Optional: add bottom margin if desired */
+}
+
+/* Button Styles */
+
+.btn-custom {
+    background-color: #d35400;
+    color: #FFF;
+    border: 2px solid transparent;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-custom:hover {
+    color: #d35400;
+    background-color: #FFF;
+    border: 2px solid #d35400;
+}
